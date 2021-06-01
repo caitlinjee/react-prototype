@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import RowBox from "./components/RowBox/RowBox";
+import NavBar from "./components/NavBar/NavBar";
+import Drawer from "./components/Drawer/Drawer";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import LoginOrRegister from "./pages/LoginOrRegister";
+import Intents from "./pages/Intents";
+import IntentDetail from "./pages/IntentDetail";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/*<NavBar />
+      <h1 style={{padding: 50, textAlign: "center"}}>Intents</h1>
+      <RowBox text = "hello"></RowBox>
+      */}
+      <Register />
     </div>
   );
 }
