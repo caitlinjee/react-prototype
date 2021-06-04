@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from "react-router-dom";
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -37,7 +38,9 @@ class LoginForm extends React.Component {
         </FormControl>
         <br></br>
         <div style={{display: 'flex',  justifyContent:'center', alignItems:'center'}}>
-          <Button color="primary" variant="contained">{this.props.loginOrReg}</Button>
+          <Link to="/intents">
+            <Button color="primary" variant="contained">{this.props.loginOrReg}</Button>
+          </Link>
         </div>
       </div>
 

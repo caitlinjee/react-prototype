@@ -13,6 +13,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MessageIcon from '@material-ui/icons/Message';
+import TextField from '@material-ui/core/TextField';
 
 import TrainingPhraseOverlay from "./TrainingPhraseOverlay"
 
@@ -44,49 +45,44 @@ const rows = [
   createData('$param1'),
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: 1480,
+    },
+  },
   table: {
     minWidth: 500,
   },
-});
+}));
 
 export default function TrainingPhraseForm() {
 
   const classes = useStyles();
 
   return (
-    <TableContainer component={Paper} style = {{margin: "1em"}}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Name</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-                <Accordion>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <MessageIcon style={{ margin: 7 }} /><Typography className={classes.heading} style={{ margin: 7 }}>Training Phrases</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      
-                      <TrainingPhraseOverlay />
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div>
+      <form className={classes.root} noValidate autoComplete="off">
+        <TextField id="outlined-basic" label="Enter training phrase here" variant="outlined" />
+      </form>
+      <br></br>
+      <br></br>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+        <Typography className={classes.heading} style={{ margin: 7 }}>new example training phrase</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            
+            <TrainingPhraseOverlay />
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
   );
 }

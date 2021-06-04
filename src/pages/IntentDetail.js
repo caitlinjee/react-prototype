@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
+import {Link } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
@@ -38,9 +39,11 @@ export default function IntentDetail() {
     <div>
       <NavBar />
       <div className={classes.root} style = {{margin:"2"}}>
+        <Link to="/intents">
         <IconButton aria-label="delete">
           <ArrowBackIcon />
         </IconButton>
+        </Link>
         <form noValidate autoComplete="off">
           <TextField
           id="filled-basic"
@@ -53,6 +56,7 @@ export default function IntentDetail() {
           }}
           />
         </form>
+        <Link to="/intents">
         <Button
           variant="contained"
           color="primary"
@@ -62,6 +66,7 @@ export default function IntentDetail() {
         >
           Save
         </Button>
+        </Link>
       </div>
       <Divider />
       <RequiredParams />

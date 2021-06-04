@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link } from "react-router-dom";
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -86,10 +87,12 @@ export default function Drawer() {
             <ListItemText primary={text} />
           </ListItem>
         ))}*/}
-          <ListItem button key= "Intents">
-            <ListItemIcon><ContactSupportIcon /></ListItemIcon>
-            <ListItemText primary="Intents" />
-          </ListItem>
+          <Link to="/intents">
+            <ListItem button key= "Intents">
+              <ListItemIcon><ContactSupportIcon /></ListItemIcon>
+              <ListItemText primary="Intents" />
+            </ListItem>
+          </Link>
       </List>
       <Divider />
     </div>
